@@ -11,6 +11,7 @@ export class LifeCalculatorComponent implements OnInit {
   constructor() { }
 
   title = 'angular-app';
+
   public year: number;
   public month: number;
   public day:number;
@@ -58,7 +59,7 @@ export class LifeCalculatorComponent implements OnInit {
 
       if(day < this.day) {
         currentDay = (30 + day) - this.day;
-        month--;
+        month--; //ödünç aldığımı çıkartıyorum
       } else {
         currentDay = day - this.day;
       }
@@ -70,7 +71,7 @@ export class LifeCalculatorComponent implements OnInit {
         currentMonth = month - this.month;
       }
 
-      currentYear = year - this.year;  //senede buna gerek yok.her zaman büyük olan tarihten,küçüğü çıkardığım için
+      currentYear = year - this.year;  //senede buna gerek yok.her zaman büyük olan tarihten,küçüğü çıkarıyorum
 
       if(second < this.second) {
       	currentSecond = (60 + second) - this.second;
@@ -86,10 +87,10 @@ export class LifeCalculatorComponent implements OnInit {
       	currentMinute = minute - this.minute;
       }
 
-      currentHour = hour - this.hour;
+      currentHour = Math.abs(hour - this.hour) //en sonda saat kalıyor.direk çıkartım
 
-      let textYear = currentYear !== 0 ? `${currentYear} yıl ` : null;  //bunu yazmasam 0 sene 0 ay x gün gösterecekti bunu yazmasam
-      let textMonth = currentMonth !== 0 ? `${currentMonth} ay `  : null; //aynı mantık
+      let textYear = currentYear !== 0 ? `${currentYear} yıl ` : null;  //bunu yazmasam 0 sene 0 ay x gün gösterecekti o nedenle böyle yaptım
+      let textMonth = currentMonth !== 0 ? `${currentMonth} ay `  : null; //aynı mantığı diğerlerinde de uyguladım
       let textDay = currentDay !== 0 ? `${currentDay} gün `: null;
 
       let textHour = currentHour !== 0 ? `${currentHour} saat `  : null;
