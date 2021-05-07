@@ -1,6 +1,12 @@
 # AngularApp
 
+First run ```"npm install"``` and then run ```"ng serve"``` to see the application in action.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+
+ **Demo for 1.route [here](https://angular-app-angular-app.vercel.app/life-calculator)** 🚀
+ 
+ **Demo for 2.route [here](https://angular-app-angular-app.vercel.app/simple-counter)** 🚀
 
 ## Development server
 
