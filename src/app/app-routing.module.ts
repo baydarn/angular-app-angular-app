@@ -6,16 +6,16 @@ import { SimpleCounterComponent } from './simple-counter/simple-counter.componen
 const routes: Routes = [
   {
     path: 'life-calculator',
-    component : LifeCalculatorComponent
+    component: LifeCalculatorComponent,
   },
   {
     path: 'simple-counter',
-    component : SimpleCounterComponent
-  }
+    component: SimpleCounterComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
