@@ -18,7 +18,7 @@ export class LifeCalculatorComponent implements OnInit {
   public result:string;
   public hour: number;
   public minute:number;
-  public second: number = 0; //default olarak 0 alıyoruz saniyeyi
+  public second: number = 0; //we take seconds as 0 by default
 
   calculatorForm = new FormGroup({
     birthDate: new FormControl(''),
@@ -42,16 +42,16 @@ export class LifeCalculatorComponent implements OnInit {
 
     let date = new Date();
       let year = date.getFullYear();
-      let month = date.getMonth() + 1;  //ay bilgisi:0-11 arasında gösterildiği için +1 ekledim.
+      let month = date.getMonth() + 1;  //month info:I added +1 as the month information is shown between 0-11.
       let day = date.getDate();
 
       let hour = date.getHours();
       let minute = date.getMinutes();
       let second = date.getSeconds();
 
-      let currentYear = 0;   //kalan yıl
-      let currentMonth = 0; //kalan ay
-      let currentDay = 0;  //kalan gün
+      let currentYear = 0;   //remaining year
+      let currentMonth = 0; //remaining month
+      let currentDay = 0;  //remaining day
 
       let currentHour = 0;
       let currentMinute = 0;
@@ -59,7 +59,7 @@ export class LifeCalculatorComponent implements OnInit {
 
       if(day < this.day) {
         currentDay = (30 + day) - this.day;
-        month--; //ödünç aldığımı çıkartıyorum
+        month--; //I take out what I borrowed
       } else {
         currentDay = day - this.day;
       }
@@ -71,7 +71,7 @@ export class LifeCalculatorComponent implements OnInit {
         currentMonth = month - this.month;
       }
 
-      currentYear = year - this.year;  //senede buna gerek yok.her zaman büyük olan tarihten,küçüğü çıkarıyorum
+      currentYear = year - this.year;  //you don't need it this year. I always subtract the smaller date from the larger date
 
       if(second < this.second) {
       	currentSecond = (60 + second) - this.second;
@@ -87,10 +87,10 @@ export class LifeCalculatorComponent implements OnInit {
       	currentMinute = minute - this.minute;
       }
 
-      currentHour = Math.abs(hour - this.hour) //en sonda saat kalıyor.direk çıkartım
+      currentHour = Math.abs(hour - this.hour) //The hours remains at the end. I subtracted it out directly.
 
-      let textYear = currentYear !== 0 ? `${currentYear} yıl ` : null;  //bunu yazmasam 0 sene 0 ay x gün gösterecekti o nedenle böyle yaptım
-      let textMonth = currentMonth !== 0 ? `${currentMonth} ay `  : null; //aynı mantığı diğerlerinde de uyguladım
+      let textYear = currentYear !== 0 ? `${currentYear} yıl ` : null;  //If I didn't write this, it would show 0 years 0 months x days, so I did it like this
+      let textMonth = currentMonth !== 0 ? `${currentMonth} ay `  : null; //I applied the same logic to the others.
       let textDay = currentDay !== 0 ? `${currentDay} gün `: null;
 
       let textHour = currentHour !== 0 ? `${currentHour} saat `  : null;
@@ -98,7 +98,7 @@ export class LifeCalculatorComponent implements OnInit {
       let textSecond = currentSecond !== 0 ? `${currentSecond} saniye`  : null;
 
 
-     this.result = `${textYear !== null ? textYear : ""}${textMonth !== null ? textMonth : ""}${textDay !== null ? textDay : ""}${textHour !== null ? textHour : ""}${textMinute !== null ? textMinute : ""}${textSecond !== null ? textSecond : ""} 'dir yaşıyorsun.`;
+     this.result = `Lifetime: ${textYear !== null ? textYear : ""}${textMonth !== null ? textMonth : ""}${textDay !== null ? textDay : ""}${textHour !== null ? textHour : ""}${textMinute !== null ? textMinute : ""}${textSecond !== null ? textSecond : ""} `;
     }
 
 }
