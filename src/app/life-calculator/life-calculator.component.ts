@@ -91,7 +91,7 @@ export class LifeCalculatorComponent implements OnInit {
 
       let textYear = currentYear !== 0 ? `${currentYear} year ` : null;  //If I didn't write this, it would show 0 years 0 months x days, so I did it like this
       let textMonth = currentMonth !== 0 ? `${currentMonth} month `  : null; //I applied the same logic to the others.
-      let textDay = currentDay !== 0 ? `${currentDay} daz `: null;
+      let textDay = currentDay !== 0 ? `${currentDay} day `: null;
 
       let textHour = currentHour !== 0 ? `${currentHour} hours `  : null;
       let textMinute = currentMinute !== 0 ? `${currentMinute} minutes ` : null;
