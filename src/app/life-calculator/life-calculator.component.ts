@@ -89,13 +89,13 @@ export class LifeCalculatorComponent implements OnInit {
 
       currentHour = Math.abs(hour - this.hour) //The hours remains at the end. I subtracted it out directly.
 
-      let textYear = currentYear !== 0 ? `${currentYear} yıl ` : null;  //If I didn't write this, it would show 0 years 0 months x days, so I did it like this
-      let textMonth = currentMonth !== 0 ? `${currentMonth} ay `  : null; //I applied the same logic to the others.
-      let textDay = currentDay !== 0 ? `${currentDay} gün `: null;
+      let textYear = currentYear !== 0 ? `${currentYear} year ` : null;  //If I didn't write this, it would show 0 years 0 months x days, so I did it like this
+      let textMonth = currentMonth !== 0 ? `${currentMonth} month `  : null; //I applied the same logic to the others.
+      let textDay = currentDay !== 0 ? `${currentDay} daz `: null;
 
-      let textHour = currentHour !== 0 ? `${currentHour} saat `  : null;
-      let textMinute = currentMinute !== 0 ? `${currentMinute} dakika ` : null;
-      let textSecond = currentSecond !== 0 ? `${currentSecond} saniye`  : null;
+      let textHour = currentHour !== 0 ? `${currentHour} hours `  : null;
+      let textMinute = currentMinute !== 0 ? `${currentMinute} minutes ` : null;
+      let textSecond = currentSecond !== 0 ? `${currentSecond} second`  : null;
 
 
      this.result = `Lifetime: ${textYear !== null ? textYear : ""}${textMonth !== null ? textMonth : ""}${textDay !== null ? textDay : ""}${textHour !== null ? textHour : ""}${textMinute !== null ? textMinute : ""}${textSecond !== null ? textSecond : ""} `;
